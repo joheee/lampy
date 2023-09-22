@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "736662249681",
+    "project_id": "lampy-ad5ce",
+    "storage_bucket": "lampy-ad5ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736662249681:android:6da2f930f8e60268ae65f0",
+        "android_client_info": {
+          "package_name": "com.example.lampy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI56EICHhxhXLd4yXkLeo6N1IogcVlb68"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
