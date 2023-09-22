@@ -48,6 +48,7 @@ class DefaultFirebaseOptions {
     appId: '1:736662249681:web:5c63d283b5d83cadae65f0',
     messagingSenderId: '736662249681',
     projectId: 'lampy-ad5ce',
+    databaseURL: 'https://lampy-ad5ce-default-rtdb.asia-southeast1.firebasedatabase.app/',
     authDomain: 'lampy-ad5ce.firebaseapp.com',
     storageBucket: 'lampy-ad5ce.appspot.com',
     measurementId: 'G-EVGMBGBX5M',
@@ -58,6 +59,7 @@ class DefaultFirebaseOptions {
     appId: '1:736662249681:android:6da2f930f8e60268ae65f0',
     messagingSenderId: '736662249681',
     projectId: 'lampy-ad5ce',
+    databaseURL: 'https://lampy-ad5ce-default-rtdb.asia-southeast1.firebasedatabase.app/',
     storageBucket: 'lampy-ad5ce.appspot.com',
   );
 
@@ -66,6 +68,7 @@ class DefaultFirebaseOptions {
     appId: '1:736662249681:ios:361c34c65c59a695ae65f0',
     messagingSenderId: '736662249681',
     projectId: 'lampy-ad5ce',
+    databaseURL: 'https://lampy-ad5ce-default-rtdb.asia-southeast1.firebasedatabase.app/',
     storageBucket: 'lampy-ad5ce.appspot.com',
     iosBundleId: 'com.example.lampy',
   );
@@ -75,6 +78,7 @@ class DefaultFirebaseOptions {
     appId: '1:736662249681:ios:361c34c65c59a695ae65f0',
     messagingSenderId: '736662249681',
     projectId: 'lampy-ad5ce',
+    databaseURL: 'https://lampy-ad5ce-default-rtdb.asia-southeast1.firebasedatabase.app/',
     storageBucket: 'lampy-ad5ce.appspot.com',
     iosBundleId: 'com.example.lampy',
   );

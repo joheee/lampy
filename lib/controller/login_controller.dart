@@ -18,6 +18,7 @@ class LoginController {
         )
       });
     } on FirebaseAuthException {
+      // ignore: use_build_context_synchronously
       CustomSnackbar.invoke(context, Variable.errorColor, 'Invalid credentials!');
     }
   }
