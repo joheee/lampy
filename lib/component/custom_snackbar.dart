@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lampy/config/variable.dart';
 
 class CustomSnackbar {
-  static void callSnackbar(
+  static void invoke(
     BuildContext context, 
     Color backgroundColor,
     String text

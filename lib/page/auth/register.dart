@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lampy/component/custom_snackbar.dart';
-import 'package:lampy/page/auth/login.dart';
+import 'package:lampy/controller/login_controller.dart';
+import 'package:lampy/controller/register_controller.dart';
 import 'package:lampy/layout/custom_auth_layout.dart';
 import 'package:lampy/component/custom_elevated_button.dart';
 import 'package:lampy/component/custom_icon.dart';
@@ -10,17 +10,6 @@ import 'package:lampy/config/variable.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
-
-  void handleLoginPage(BuildContext context){
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const LoginPage()) 
-    );
-  }
-
-  void handleRegister(BuildContext context){
-    CustomSnackbar.callSnackbar(context, Variable.errorColor, 'Testing');
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,14 +65,14 @@ class RegisterPage extends StatelessWidget {
 
         CustomElevatedButton(
           label: 'Register',
-          onPressed: () => handleRegister(context)
+          onPressed: () => RegisterController.handleRegister(context, emailController.text, passwordController.text, retypePasswordController.text)
         ),
         
         const SizedBox(height: 10.0),
         
         CustomTextButton(
           label: 'Login here',
-          onPressed: () => handleLoginPage(context)
+          onPressed: () => LoginController.goToLoginPage(context)
         ),
       ],
     );

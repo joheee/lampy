@@ -1,29 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:lampy/page/auth/register.dart';
+import 'package:lampy/controller/login_controller.dart';
+import 'package:lampy/controller/register_controller.dart';
 import 'package:lampy/layout/custom_auth_layout.dart';
 import 'package:lampy/component/custom_elevated_button.dart';
 import 'package:lampy/component/custom_icon.dart';
 import 'package:lampy/component/custom_input_field.dart';
 import 'package:lampy/component/custom_text_button.dart';
 import 'package:lampy/config/variable.dart';
-import 'package:lampy/page/home/home.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
-
-  void handleRegisterPage(BuildContext context){
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const RegisterPage()) 
-    );
-  }
-
-  void handleLogin(BuildContext context){
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const HomePage()) 
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -65,14 +51,14 @@ class LoginPage extends StatelessWidget {
         
         CustomElevatedButton(
           label: 'Login',
-          onPressed: () => handleLogin(context)
+          onPressed: () => LoginController.handleLogin(context, emailController.text, passwordController.text)
         ),
         
         const SizedBox(height: 10.0),
         
         CustomTextButton(
           label: 'Register here',
-          onPressed: () => handleRegisterPage(context)
+          onPressed: () => RegisterController.goToRegisterPage(context)
         ),
       ],
     );
