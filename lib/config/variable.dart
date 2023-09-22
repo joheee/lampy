@@ -8,5 +8,4 @@ class Variable {
   static double defaultComponentWidth = 130.0;
   static Duration toggleDuration = const Duration(milliseconds: 300);
   static EdgeInsetsGeometry defaultPadding = const EdgeInsets.all(30);
-
 }
