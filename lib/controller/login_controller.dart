@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:lampy/component/custom_snackbar.dart';
 import 'package:lampy/config/variable.dart';

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lampy/firebase_options.dart';
 import 'package:lampy/page/auth/login.dart';
-import 'package:lampy/page/auth/register.dart';
-import 'package:lampy/page/home/home.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 Future<void> main() async {
