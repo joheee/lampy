@@ -7,7 +7,7 @@ import 'package:lampy/page/auth/register.dart';
 import 'package:lampy/page/home/home.dart';
 
 class RegisterController {
-  static void handleRegister(BuildContext context, String email, String pass, String conpass){
+  static void handleRegister(BuildContext context, String email, String pass, String conpass) async {
     if(email == '' || pass == '' || conpass == '') {
       CustomSnackbar.invoke(context, Variable.errorColor, 'All field must be filled!');
       return;
@@ -24,11 +24,11 @@ class RegisterController {
       CustomSnackbar.invoke(context, Variable.errorColor, 'Invalid email format!');
       return;
     }
-    registerFirebase(context, email, pass);
+    await registerFirebase(context, email, pass);
   }
 
-  static void registerFirebase(BuildContext context, String email, String pass) {
-    FirebaseAuth
+  static Future<void> registerFirebase(BuildContext context, String email, String pass) async {
+    await FirebaseAuth
     .instance
     .createUserWithEmailAndPassword(
       email: email, 
