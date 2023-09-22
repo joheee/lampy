@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lampy/controller/auth_controller.dart';
 import 'package:lampy/controller/login_controller.dart';
 import 'package:lampy/controller/register_controller.dart';
 import 'package:lampy/layout/custom_auth_layout.dart';
@@ -13,9 +14,12 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AuthController.authMiddleware(context);
+    
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
     TextEditingController retypePasswordController = TextEditingController();
+
 
     return CustomAuthLayout(
       children: <Widget>[

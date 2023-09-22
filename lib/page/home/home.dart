@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lampy/component/custom_elevated_button.dart';
 import 'package:lampy/component/custom_home_grid_item.dart';
+import 'package:lampy/controller/auth_controller.dart';
 import 'package:lampy/layout/custom_home_grid_layout.dart';
 import 'package:lampy/component/custom_toggle.dart';
 import 'package:lampy/config/variable.dart';
@@ -20,13 +21,6 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       isSwitched = !isSwitched;
     });
-  }
-
-  void handleLogout(BuildContext context) {
-    Navigator.push(
-      context, 
-      MaterialPageRoute(builder: (context) => const LoginPage())
-    );
   }
 
   @override
@@ -56,7 +50,7 @@ class _HomePageState extends State<HomePage> {
           return CustomHomeGridItem(
             child: CustomElevatedButton(
               label: 'Logout',
-              onPressed: () => handleLogout(context),
+              onPressed: () => AuthController.handleLogout(context),
             )
           );
         } else {
