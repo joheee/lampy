@@ -15,7 +15,6 @@ class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AuthController.authMiddleware(context);
-    
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
     TextEditingController retypePasswordController = TextEditingController();

@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Lampy the Smart Lamp',
-      home: RegisterPage()
+      home: LoginPage()
     );
   }
 }

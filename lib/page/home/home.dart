@@ -5,7 +5,6 @@ import 'package:lampy/controller/auth_controller.dart';
 import 'package:lampy/layout/custom_home_grid_layout.dart';
 import 'package:lampy/component/custom_toggle.dart';
 import 'package:lampy/config/variable.dart';
-import 'package:lampy/page/auth/login.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -25,6 +24,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    AuthController.guestMiddleware(context);
+
     return CustomHomeGridLayout(
       itemBuilder: (context, index) {
         if (index == 0) {
