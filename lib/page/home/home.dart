@@ -16,28 +16,35 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool isSwitched = false;
+  double volt = 1;
 
   @override
   void initState() {
     super.initState();
+    AuthController.guestMiddleware(context);
     HomeController.switchQuery.onValue.listen((event) {
       final data = event.snapshot.value as Map;
       setState(() {
         isSwitched = data['state'];
       });
     });
+    HomeController.voltQuery.onValue.listen((event) {
+      final data = event.snapshot.value as Map;
+      setState(() {
+        volt = data['state'];
+      });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    AuthController.guestMiddleware(context);
 
     return CustomHomeGridLayout(
       itemBuilder: (context, index) {
         if (index == 0) {
           return CustomHomeGridItem(
             child: Text(
-              '3V',
+              '$volt V',
               style: TextStyle(
                 color: Variable.primaryColor,  
                 fontSize: Variable.defaultComponentHeight
@@ -47,7 +54,7 @@ class _HomePageState extends State<HomePage> {
         } else if (index == 1) {
           return CustomHomeGridItem(
             child: GestureDetector(
-              onTap: () => HomeController.handleSwitchChange(isSwitched),
+              onTap: () => HomeController.handleChangeInterface(isSwitched, volt),
               child: CustomToggle(
                 isSwitched: isSwitched
               ),
@@ -58,7 +65,7 @@ class _HomePageState extends State<HomePage> {
             child: CustomElevatedButton(
               label: 'Logout',
               onPressed: () {
-                if(isSwitched) HomeController.handleSwitchChange(isSwitched);
+                if(isSwitched) HomeController.handleChangeInterface(isSwitched, volt);
                 AuthController.handleLogout(context);
               },
             )

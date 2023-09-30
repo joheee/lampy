@@ -9,12 +9,24 @@ import 'package:lampy/component/custom_input_field.dart';
 import 'package:lampy/component/custom_text_button.dart';
 import 'package:lampy/config/variable.dart';
 
-class RegisterPage extends StatelessWidget {
+class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
+  
+  @override
+  void initState(){
     AuthController.authMiddleware(context);
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // AuthController.authMiddleware(context);
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
     TextEditingController retypePasswordController = TextEditingController();
